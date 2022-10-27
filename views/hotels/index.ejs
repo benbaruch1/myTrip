@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+    <h1>All Hotels</h1>
+    <ul>
+        <% for(hotel of allHotels) { %>
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="<%= hotel.images.length > 0 ? hotel.images[0].url : 'https://nameproscdn.com/data-auth/b/attachments/106/106343-82907bfea9fe97e84861e2ee7c5b4f5b.data?j=eyJkIjoiaW5saW5lOyBmaWxlbmFtZT1cImVtcHR5LnBuZ1wiIiwiZSI6MTY2NzQ2MjA5NiwibSI6ImltYWdlXC9wbmciLCJ0IjoxNjYyMjc4MDk2LCJ2IjoxfQ&k=N1sofdtF-mwkh8UJJlrenoNuuO8' %>"
+                            class="img-fluid rounded-start h-100 mh-100 mw-100" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/hotels/<%= hotel._id %>">
+                                    <%= hotel.title %>
+                                </a>
+                            </h5>
+                            <p class="card-text">
+                                <%= hotel.description %>
+                            </p>
+                            <p class="card-text"><small class="text-muted">
+                                    <%= hotel.location %>
+                                </small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </ul>

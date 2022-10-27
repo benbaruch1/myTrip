@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate') %>
+    <link rel="stylesheet" href="/stylesheets/images.css" class="rel">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h1 class="text-center">Add new hotel</h1>
+            <form action="/hotels" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title:</label>
+                    <input class="form-control" type="text" id="title" name="hotel[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location:</label>
+                    <input class="form-control" type="text" id="location" name="hotel[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <label class="form-label" for="price">Price:</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="price">$</span>
+                    <input type="text" class="form-control" name="hotel[price]" id="price"
+                        placeholder="Enter price without comma" aria-label="price" aria-describedby="price" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Choose Image(s):</label>
+                    <div class="form-file custom-file">
+                        <input class="form-control custom-file-input" type="file" id="image" name="image" multiple
+                            onchange="previewMultiple(event)">
+                        <label for="image" class="form-label custom-file-label"></label>
+                    </div>
+                    <div id="formFile"></div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description:</label>
+                    <textarea class="form-control" type="text" id="description" name="hotel[description]"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-primary">Submit Hotel</button>
+            </form>
+        </div>
+    </div>
+    <div class="mt-5"><a href="/hotels">All Hotels</a></div>
